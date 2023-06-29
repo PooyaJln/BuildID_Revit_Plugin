@@ -71,6 +71,13 @@ projectId = config.get('projectId')
 # items = response_file_check(grandparent_directory,API_BASE_URI,USERNAME_itemlistexport,PASSWORD_itemlistexport)
 
 def set_and_book():
+    '''
+    this function opens a window for user input and returns a string as EPC number.
+    if the entered EPC number is already booked, it asks the user if they want to
+    enter a new one or cancel the process.
+    '''
+# TODO: error handling when the user cancels the input
+# 
     while True:
         epc_number = forms.ask_for_string(
             default='',

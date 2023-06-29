@@ -19,19 +19,19 @@ def get_all_items_from_file(grandpar_dir):
     return data
 
 
-# def get_item_type_names():
-#     """
-#     this function returns a list of itemTypes from buildID.
-#     """
-#     itemTypeNames = []
-#     for item in items:
-#         if item.get('itemTypeName') in itemTypeNames:
-#             continue
-#         else:
-#             itemTypeNames.append(item.get('itemTypeName'))
+def get_item_type_names(items):
+    """
+    this function returns a list of itemTypes from buildID.
+    """
+    itemTypeNames = []
+    for item in items:
+        if item.get('itemTypeName') in itemTypeNames:
+            continue
+        else:
+            itemTypeNames.append(item.get('itemTypeName'))
 
-#     print(itemTypeNames)
-#     return itemTypeNames
+    print(itemTypeNames)
+    return itemTypeNames
 
 
 def get_item_by_epc_number(grandpar_dir, epc_number):

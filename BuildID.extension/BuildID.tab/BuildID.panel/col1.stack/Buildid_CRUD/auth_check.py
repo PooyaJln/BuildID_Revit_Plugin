@@ -10,6 +10,9 @@ FILE_NAME = ".env"
 test_file_name = "config.json"
 
 def get_user_input_form():
+    '''
+    this function opens an input window to get the credentials info
+    and return the data as a dictionary'''
     components = [ Label("Some data is required for saving BuildID database and"),
                Label("login data does not exist"),
                Separator(),
@@ -49,6 +52,10 @@ def get_missing_config_values(missing_list):
 #             file.write('{}={}\n'.format(key,value))
                     
 def save_config_file(file_path,input_dictionary): 
+    '''
+    this function creates a config.json file
+    '''
+    # TODO: cancel the file creation if user doesn't input anything
     with open(file_path, "w") as file:
         file.write(str(input_dictionary).replace("\'","\""))
 
@@ -61,7 +68,9 @@ def fetch_config_file_data(file_path):
 
 def config_file_check(directory_name):
     """ this function checks whether 'config.json' file exists or not.
-    if not it asks the user to fill in the data and it creates one"""
+    if not it asks the user to fill in the data and it creates one
+    """
+    # TODO: cancel the file creation if user doesn't input anything
     file_path = os.path.join(directory_name,test_file_name)
     if not os.path.exists(file_path):
         config = get_user_input_form()
